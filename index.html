@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Sencha Touch 2 - Barebones Retina CSS Example</title>
+
+        <!-- Sencha Touch -->
+        <link rel="stylesheet" href="http://dev.sencha.com/deploy/sencha-touch-2-b1/resources/css/sencha-touch.css">
+        <script src="http://dev.sencha.com/deploy/sencha-touch-2-b1/builds/sencha-touch-all.js" type="text/javascript"></script>
+
+        <!-- Default CSS -->
+        <style type="text/css" media="screen">
+            /*ui:retina*/
+            .x-toolbar-retina {
+                background: url(retina-bg.png) 0 -92px repeat-x;
+                color: #fff;
+                text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+            }
+            .x-toolbar-retina.x-docked-bottom {
+                border-top-color: #024384;
+            }
+            .x-toolbar-retina.x-docked-top {
+                border-bottom-color: #024384;
+            }
+
+            /*ui:retina2*/
+            .x-toolbar-retina2 {
+                background: url(retina-bg-2.png) 0 -92px repeat-x;
+            }
+            .x-toolbar-retina2.x-docked-bottom {
+                border-top-color: #024384;
+            }
+            .x-toolbar-retina2.x-docked-top {
+                border-bottom-color: #024384;
+            }
+        </style>
+
+        <!-- Retina only CSS -->
+        <style type="text/css" media="only screen and (-webkit-min-device-pixel-ratio: 2)">
+            /*ui:retina*/
+            .x-toolbar-retina {
+                background: url(retina-bg.png) top left repeat-x;
+                background-size: 50px 69px; /*this must be the size of the 'whole' image*/
+            }
+            .x-toolbar-retina.x-docked-bottom {
+                border-top-color: #1c6a6d;
+            }
+            .x-toolbar-retina.x-docked-top {
+                border-bottom-color: #1c6a6d;
+            }
+
+            /*ui:retina2*/
+            .x-toolbar-retina2 {
+                background: url(retina-bg-2.png) top left repeat-x;
+                background-size: 200px 69px; /*this must be the size of the 'whole' image*/
+            }
+            .x-toolbar-retina2.x-docked-bottom {
+                border-top-color: #1c6a6d;
+            }
+            .x-toolbar-retina2.x-docked-top {
+                border-bottom-color: #1c6a6d;
+            }
+        </style>
+
+
+        <script type="text/javascript">
+
+Ext.setup({
+    onReady: function() {
+        //create two toolbars. one for bottom, one for top
+        Ext.Viewport.add({
+            xtype: 'toolbar',
+            docked: 'top',
+            ui: 'retina',
+            title: 'Retina Toolbar!'
+        });
+
+        Ext.Viewport.add({
+            xtype: 'toolbar',
+            docked: 'bottom',
+            ui: 'retina2'
+        });
+    }
+});
+
+        </script>
+    </head>
+
+    <body></body>
+</html>
